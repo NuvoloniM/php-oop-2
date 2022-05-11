@@ -75,16 +75,32 @@ class User {
         return $this;
     }
     public function setDeadline($_deadline){
-        $this -> deadline = $_deadline;
-        return $this;
-    }
+        //setto variabile data di oggi
+        // $todays_date = date("d-m-Y");
+        $deadline = $_deadline;
+        //trasformo le date di oggi in secondi per compararle 
+        $today_stamp = strtotime("now");
+        $deadline_stamp = strtotime($deadline);
+        //condizione se òa carta è scaduta
+        if($deadline_stamp < $today_stamp){
+            $this -> deadline = "la tua carta è scaduta";
+            return $this;
+            } else {
+                $this -> deadline = "procedi con gli acquisti";
+                return $this;
+            }
+        }
+        
     public function setSigned($_signed){
         $this -> signed = $_signed;
         return $this;
     }
     public function setSconto($_signed){
         if ($_signed == true){
-            $this -> sconto = 0.2;
+            $this -> sconto = 0.8;
+            return $this;
+        } else {
+            $this -> sconto = 1;
             return $this;
         }
     }

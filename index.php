@@ -19,7 +19,7 @@ $crocchetteA = new Food ( "Crocchette al pollo", 5, "MAG", "Pollo" );
 $pateC = new Food ( "Patè di salmone", 6, "GIU", "Salmone" );
 
 //istanzio user
-$user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "01/09", false )
+$user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "10-03-2023", false )
 
 ?>
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ $user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "01/0
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $toy1 -> getName() ?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $toy1 -> getPrice() ?>,00€</h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $toy1 -> getPrice() * $user1 -> getSconto() ?> €</h6>
                                 <p class="card-text"><?php echo $toy1 -> getId() ?></p>
                                 <a href="#" class="card-link">Inserisci nel carrello</a>
                             </div>
@@ -50,7 +50,7 @@ $user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "01/0
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $crocchetteA -> getName() ?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> getPrice() ?>,00€</h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> getPrice() * $user1 -> getSconto()?> €</h6>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> getScadenza() ?></h6>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> getProtein() ?></h6>
                                 <p class="card-text"><?php echo $crocchetteA -> getId() ?></p>
@@ -62,7 +62,7 @@ $user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "01/0
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $pateC -> getName() ?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> getPrice() ?>,00€</h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> getPrice() * $user1 -> getSconto()?> €</h6>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> getScadenza() ?></h6>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> getProtein() ?></h6>
                                 <p class="card-text"><?php echo $pateC -> getId() ?></p>
@@ -78,7 +78,7 @@ $user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "01/0
                     <div class="card-body">
                         <h5 class="card-title"><?= $user1 -> getName() . " " . $user1 -> getSurname() ?></h5>
                         <p class="card-text"><?= $user1 -> getEmail() ?></p>
-                        <p class="card-text"><?= $user1 -> getSigned() ?></p>
+                        <p class="card-text"><?= $user1 -> getDeadline() ?></p>
                     </div>
                 </div>
             </div>
