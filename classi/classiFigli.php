@@ -34,6 +34,3 @@ class Food extends Products {
         return $this -> protein;
     }
 }
-
-
-?>

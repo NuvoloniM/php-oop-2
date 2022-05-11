@@ -13,10 +13,13 @@
 
 include __DIR__ . '/classi/classiFigli.php';
 
-
+//istanzio prodotti
 $toy1 = new Products ("Osso di plastica" , 3,);
 $crocchetteA = new Food ( "Crocchette al pollo", 5, "MAG", "Pollo" );
 $pateC = new Food ( "Patè di salmone", 6, "GIU", "Salmone" );
+
+//istanzio user
+$user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "01/09", false )
 
 ?>
 <!DOCTYPE html>
@@ -30,35 +33,52 @@ $pateC = new Food ( "Patè di salmone", 6, "GIU", "Salmone" );
 </head>
 <body>
     <div class="container">
-        <div class="row row-cols-4 py-5">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $toy1 -> name ?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $toy1 -> price?>,00€</h6>
-                        <p class="card-text"><?php echo $toy1 -> id ?></p>
+        <div class="row">
+            <div class="col-8">
+                <div class="row row-cols-2 py-5">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $toy1 -> getName() ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $toy1 -> getPrice() ?>,00€</h6>
+                                <p class="card-text"><?php echo $toy1 -> getId() ?></p>
+                                <a href="#" class="card-link">Inserisci nel carrello</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $crocchetteA -> getName() ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> getPrice() ?>,00€</h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> getScadenza() ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> getProtein() ?></h6>
+                                <p class="card-text"><?php echo $crocchetteA -> getId() ?></p>
+                                <a href="#" class="card-link">Inserisci nel carrello</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $pateC -> getName() ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> getPrice() ?>,00€</h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> getScadenza() ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> getProtein() ?></h6>
+                                <p class="card-text"><?php echo $pateC -> getId() ?></p>
+                                <a href="#" class="card-link">Inserisci nel carrello</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-4">
                 <div class="card" style="width: 18rem;">
+                    <img src="./img/user.png" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $crocchetteA -> name ?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> price ?>,00€</h6>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> scadenza ?></h6>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $crocchetteA -> protein ?></h6>
-                        <p class="card-text"><?php echo $crocchetteA -> id ?></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-            <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $pateC -> name ?></h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> price ?>,00€</h6>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> scadenza ?></h6>
-                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $pateC -> protein ?></h6>
-                        <p class="card-text"><?php echo $pateC -> id ?></p>
+                        <h5 class="card-title"><?= $user1 -> getName() . " " . $user1 -> getSurname() ?></h5>
+                        <p class="card-text"><?= $user1 -> getEmail() ?></p>
+                        <p class="card-text"><?= $user1 -> getSigned() ?></p>
                     </div>
                 </div>
             </div>
