@@ -16,10 +16,15 @@ class Products {
         $this -> name = $_name;
         return $this;
     }
+
     public function setPrice($_price){
+        if(!is_int($_price)){
+            throw new Exception('Is not a number');
+        }
         $this -> price = $_price;
-        return $this;
+        
     }
+    
     public function setId(){
         $this -> id = rand(1000,9999);
         return $this;

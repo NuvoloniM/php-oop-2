@@ -13,14 +13,14 @@
 
 include __DIR__ . '/classi/classiFigli.php';
 
+
 //istanzio prodotti
 $toy1 = new Products ("Osso di plastica" , 3,);
 $crocchetteA = new Food ( "Crocchette al pollo", 5, "MAG", "Pollo", "A", "4" );
 $pateC = new Food ( "Patè di salmone", 6, "GIU", "Salmone", "D", "2" );
 
 //istanzio user
-$user1 = new SignedUser ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "10-03-2023", false )
-
+$user1 = new SignedUser ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "10-03-2023", false );
 ?>
 <!DOCTYPE html>
 <html lang="en">
