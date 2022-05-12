@@ -42,19 +42,16 @@ class User {
     public $surname;
     public $email;
     public $credit;
-    public $_deadline;
-    public $_signed;
-    public $_sconto;
+    public $deadline;
+  
 
     //costruttore 
-    public function __construct($_name, $_surname, $_email, $_credit, $_deadline, $_signed){
+    public function __construct($_name, $_surname, $_email, $_credit, $_deadline){
         $this -> setName($_name);
         $this -> setSurname($_surname);
         $this -> setEmail($_email);
         $this -> setCreditCard($_credit);
         $this -> setDeadline($_deadline);
-        $this -> setSigned($_signed);
-        $this -> setSconto($_signed);
     }
 
     // setter
@@ -91,19 +88,7 @@ class User {
             }
         }
         
-    public function setSigned($_signed){
-        $this -> signed = $_signed;
-        return $this;
-    }
-    public function setSconto($_signed){
-        if ($_signed == true){
-            $this -> sconto = 0.8;
-            return $this;
-        } else {
-            $this -> sconto = 1;
-            return $this;
-        }
-    }
+    
     //getter
     public function getName(){
         return $this -> name;
@@ -119,12 +104,6 @@ class User {
     }
     public function getDeadline(){
         return $this -> deadline;
-    }
-    public function getSigned(){
-        return $this -> signed;
-    }
-    public function getSconto(){
-        return $this -> sconto;
     }
 }
 

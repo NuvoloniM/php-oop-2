@@ -15,11 +15,11 @@ include __DIR__ . '/classi/classiFigli.php';
 
 //istanzio prodotti
 $toy1 = new Products ("Osso di plastica" , 3,);
-$crocchetteA = new Food ( "Crocchette al pollo", 5, "MAG", "Pollo" );
-$pateC = new Food ( "Patè di salmone", 6, "GIU", "Salmone" );
+$crocchetteA = new Food ( "Crocchette al pollo", 5, "MAG", "Pollo", "A", "4" );
+$pateC = new Food ( "Patè di salmone", 6, "GIU", "Salmone", "D", "2" );
 
 //istanzio user
-$user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "10-03-2023", false )
+$user1 = new SignedUser ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "10-03-2023", false )
 
 ?>
 <!DOCTYPE html>
@@ -78,6 +78,7 @@ $user1 = new User ("Marco", "Rossi", "marcorossi@gmail.com", "aslb343545", "10-0
                     <div class="card-body">
                         <h5 class="card-title"><?= $user1 -> getName() . " " . $user1 -> getSurname() ?></h5>
                         <p class="card-text"><?= $user1 -> getEmail() ?></p>
+                        <p class="card-text"><?= $user1 -> getUserId() ?></p>
                         <p class="card-text"><?= $user1 -> getDeadline() ?></p>
                     </div>
                 </div>
